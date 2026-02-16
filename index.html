@@ -1739,82 +1739,138 @@
         const modal = document.getElementById('projectModal');
         const modalContent = document.getElementById('modalContent');
 
-        function openProjectModal(projectId) {
-            let title, desc, icon, version, size, fullDesc, techs = [];
-            
-            if (projectId === 'markaz') {
-                title = 'Markaz Laundry';
-                desc = 'Manajemen laundry all-in-one';
-                icon = 'soap';
-                version = '2.4.1';
-                size = '18 MB';
-                fullDesc = 'Aplikasi yang digunakan oleh 30+ outlet laundry di seluruh Indonesia. Fitur unggulan: notifikasi otomatis via WhatsApp, laporan keuangan interaktif, manajemen pelanggan, grafik pendapatan, dan backup ke cloud. Mendukung multi-outlet dengan role kasir & admin.';
-                techs = ['Kotlin', 'Firebase', 'MPAndroidChart', 'Retrofit', 'FCM'];
-            } else {
-                title = 'Desa Kebonrejo';
-                desc = 'Portal desa digital';
-                icon = 'tree';
-                version = '3.0.2';
-                size = '22 MB';
-                fullDesc = 'Solusi Smart Village untuk pelayanan publik. Warga dapat mengajukan surat pengantar, melihat pengumuman, mengecek anggaran desa, serta lapor kejadian. Terintegrasi dengan WhatsApp untuk notifikasi realtime.';
-                techs = ['Flutter', 'Laravel', 'MySQL', 'REST API', 'JWT'];
-            }
+     function openProjectModal(projectId) {
 
-            const techHTML = techs.map(t => `<span class="tech-tag">${t}</span>`).join('');
+    let title, icon, version, size, fullDesc, techs = [];
+    let screenshots = [];
 
-            const contentHTML = `
-                <span class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></span>
-                <div class="modal-header">
-                    <div class="modal-icon">
-                        <i class="fas fa-${icon}"></i>
-                    </div>
-                    <div class="modal-title-section">
-                        <h2>${title}</h2>
-                        <div class="modal-meta">
-                            <span><i class="fas fa-code-branch"></i> v${version}</span>
-                            <span><i class="fas fa-database"></i> ${size}</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="modal-desc">${fullDesc}</p>
-                <h4 style="color: white; margin-bottom: 12px; font-size: 1rem;">Tech stack</h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px;">
-                    ${techHTML}
-                </div>
-                <h4 style="color: white; margin-bottom: 12px; font-size: 1rem;">Preview</h4>
-                <div class="screenshot-scroller">
-<div class="screenshot-item">
-    <img src="images/screenshots/${projectId}/1.png" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
-<div class="screenshot-item">
-    <img src="images/screenshots/${projectId}/2.png" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
-    <img src="images/screenshots/${projectId}/3.png" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
-<div class="screenshot-item">
-    <img src="images/screenshots/${projectId}/1.png" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
-<div class="screenshot-item">
-    <img src="images/screenshots/${projectId}/2.png" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
-    <img src="images/screenshots/${projectId}/3.png" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
+    if (projectId === 'markaz') {
 
+        title = 'Markaz Laundry';
+        icon = 'soap';
+        version = '2.4.1';
+        size = '18 MB';
+
+        fullDesc = 'Aplikasi laundry all-in-one dengan notifikasi WhatsApp, laporan realtime, dan multi outlet.';
+
+        techs = ['Kotlin','Firebase','Retrofit','FCM'];
+
+        screenshots = [
+            "1.png",
+            "2.png",
+            "3.png"
+        ];
+
+    } else if (projectId === 'desa') {
+
+        title = 'Desa Kebonrejo';
+        icon = 'tree';
+        version = '3.0.2';
+        size = '22 MB';
+
+        fullDesc = 'Portal desa digital untuk pelayanan publik dan transparansi anggaran.';
+
+        techs = ['Flutter','Laravel','MySQL','REST API'];
+
+        screenshots = [
+            "1.png",
+            "2.png",
+            "3.png"
+        ];
+    }
+
+
+    // generate tech stack
+    const techHTML = techs.map(t =>
+        `<span class="tech-tag">${t}</span>`
+    ).join("");
+
+
+
+    // generate screenshots otomatis sesuai folder
+    const screenshotHTML = screenshots.map(file => `
+        <div class="screenshot-item">
+            <img src="images/screenshots/${projectId}/${file}"
+            style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
+    `).join("");
+
+
+
+    const contentHTML = `
+
+        <span class="modal-close" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+        </span>
+
+        <div class="modal-header">
+
+            <div class="modal-icon">
+                <i class="fas fa-${icon}"></i>
+            </div>
+
+            <div class="modal-title-section">
+                <h2>${title}</h2>
+
+                <div class="modal-meta">
+                    <span>v${version}</span>
+                    <span>${size}</span>
                 </div>
-                <div class="modal-actions">
-                    <button class="download-btn" onclick="simulateDownload('${title} APK')">
-                        <i class="fas fa-download"></i> Download APK
-                    </button>
-                    <button class="download-btn" style="background: transparent; border: 1px solid var(--border-light); color: white;" onclick="closeModal()">
-                        Tutup
-                    </button>
-                </div>
-            `;
-            
-            modalContent.innerHTML = contentHTML;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+
+            </div>
+
+        </div>
+
+
+        <p class="modal-desc">
+            ${fullDesc}
+        </p>
+
+
+        <h4 style="margin-bottom:10px;">Tech stack</h4>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+            ${techHTML}
+        </div>
+
+
+
+        <h4 style="margin-bottom:10px;">Preview</h4>
+
+        <div class="screenshot-scroller">
+            ${screenshotHTML}
+        </div>
+
+
+
+        <div class="modal-actions">
+
+            <button class="download-btn"
+            onclick="simulateDownload('${title}')">
+
+                Download
+
+            </button>
+
+            <button class="download-btn"
+            onclick="closeModal()">
+
+                Tutup
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    modalContent.innerHTML = contentHTML;
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
 
         function closeModal() {
             modal.classList.remove('active');
