@@ -1528,6 +1528,23 @@
         <!-- PROJECT GRID -->
         <div class="projects-grid">
 
+            <div class="project-card" onclick="openProjectModal('masansor-mail')" style="cursor: pointer;">
+                <div class="card-header">
+                    <div class="icon-wrapper"><img src="images/icons/msmail.png" style="width:100%;height:100%;object-fit:contain;"></div>
+                    <div class="badge-group"><span class="badge primary">PROKDUTIVITAS</span><span class="badge">v2.0</span></div>
+                </div>
+                <h3 class="project-title">Mas Ansor Mail</h3>
+                <p class="project-desc">MasAnsorMail adalah Platform ini memungkinkan pembuatan alamat email sementara secara cepat, aman, dan efisien untuk kebutuhan testing, registrasi aplikasi, automation, maupun proteksi privasi digital.</p>
+                <div class="tech-stack"><span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Html</span>
+                    <span class="tech-tag">Node</span>
+                    <span class="tech-tag">Firebase</span></div>
+                <div class="card-footer">
+                    <span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Mas Ansor Mail')"><i class="fas fa-download"></i> APK</span>
+                    <span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
             <div class="project-card" onclick="openProjectModal('moeslem-daily-tracker')" style="cursor: pointer;">
                 <div class="card-header">
                     <div class="icon-wrapper"><img src="images/icons/moeslem-daily-tracker.png" style="width:100%;height:100%;object-fit:contain;"></div>
@@ -1784,6 +1801,14 @@
             fullDesc = 'Moeslem Daily Tracker adalah aplikasi asisten digital yang dirancang khusus untuk membantu umat Muslim mengelola ibadah harian dan membangun kebiasaan baik (habit tracking) secara konsisten.';
             techs = ["HTML","JAVASCRIPT","WA API"];
             screenshots = ["1.jpg","2.jpg","3.jpg"];
+        } else if (projectId === 'masansor-mail') {
+            title = 'Mas Ansor Mail';
+            icon = 'cube';
+            version = 'v2.0';
+            size = '2 MB';
+            fullDesc = 'MasAnsorMail adalah Platform ini memungkinkan pembuatan alamat email sementara secara cepat, aman, dan efisien untuk kebutuhan testing, registrasi aplikasi, automation, maupun proteksi privasi digital.';
+            techs = ["JavaScript","Html","Node","Firebase"];
+            screenshots = ["aa.png","bb.png","cc.png"];
         } // MODAL_LOGIC_MARKER
 
         // RENDER MODAL
@@ -1845,6 +1870,8 @@
         }
         else if(appName.includes("MOESLEM DAILY TRACKER")) {
             url = "apk/moeslem-daily-tracker.apk";
+        } else if(appName.includes("Mas Ansor Mail")) {
+            url = "apk/MSMAIL.apk";
         } // DOWNLOAD_LOGIC_MARKER
 
         if(url !== "") {
