@@ -1528,6 +1528,25 @@
         <!-- PROJECT GRID -->
         <div class="projects-grid">
 
+            <div class="project-card" onclick="openProjectModal('scannerpro')" style="cursor: pointer;">
+                <div class="card-header">
+                    <div class="icon-wrapper"><img src="images/icons/scannerpro.png" style="width:100%;height:100%;object-fit:contain;"></div>
+                    <div class="badge-group"><span class="badge primary">PRO</span><span class="badge">v2.7</span></div>
+                </div>
+                <h3 class="project-title">Scanner Pro</h3>
+                <p class="project-desc">Alat canggih dan praktis untuk mencari ratusan subdomain dan memindai IP aktif (Cloudflare / Non-CF) hanya dengan satu sentuhan jari!</p>
+                <div class="tech-stack"><span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">Vanilla JavaScript</span>
+                    <span class="tech-tag">Fetch API</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">net.Socket</span>
+                    <span class="tech-tag">Axios</span></div>
+                <div class="card-footer">
+                    <span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Scanner Pro')"><i class="fas fa-download"></i> APK</span>
+                    <span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
             <div class="project-card" onclick="openProjectModal('masansor-mail')" style="cursor: pointer;">
                 <div class="card-header">
                     <div class="icon-wrapper"><img src="images/icons/msmail.png" style="width:100%;height:100%;object-fit:contain;"></div>
@@ -1809,6 +1828,14 @@
             fullDesc = 'MasAnsorMail adalah Platform ini memungkinkan pembuatan alamat email sementara secara cepat, aman, dan efisien untuk kebutuhan testing, registrasi aplikasi, automation, maupun proteksi privasi digital.';
             techs = ["JavaScript","Html","Node","Firebase"];
             screenshots = ["aa.png","bb.png","cc.png"];
+        } else if (projectId === 'scannerpro') {
+            title = 'Scanner Pro';
+            icon = 'cube';
+            version = 'v2.7';
+            size = '1.2MB';
+            fullDesc = 'Alat canggih dan praktis untuk mencari ratusan subdomain dan memindai IP aktif (Cloudflare / Non-CF) hanya dengan satu sentuhan jari!';
+            techs = ["HTML5","Vanilla JavaScript","Fetch API","Express.js","net.Socket","Axios"];
+            screenshots = ["1a.png","2a.png","3a.png"];
         } // MODAL_LOGIC_MARKER
 
         // RENDER MODAL
@@ -1872,6 +1899,8 @@
             url = "apk/moeslem-daily-tracker.apk";
         } else if(appName.includes("Mas Ansor Mail")) {
             url = "apk/MSMAIL.apk";
+        } else if(appName.includes("Scanner Pro")) {
+            url = "apk/scannerpro.apk";
         } // DOWNLOAD_LOGIC_MARKER
 
         if(url !== "") {
