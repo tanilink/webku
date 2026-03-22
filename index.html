@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -398,7 +397,7 @@
             <em>“Apatis itu bukan keren. Apatis itu penyakit. Penyakit yang membuat kita jadi manusia yang tidak berguna bagi siapa pun, termasuk bagi diri kita sendiri.”</em><br>
             <em>“Perlawanan kita adalah dengan kembali jadi manusia yang punya adab dan ingat Tuhan. Berhenti dikendalikan sama layar.”</em>`;
             techs = ['Novel', 'Kepedulian Sosial', 'Kritis', 'Literasi Digital'];
-            screenshots = []; // nanti bisa diisi gambar cover
+            screenshots = [];
         } 
         else {
             // Data untuk aplikasi (sesuai kode asli, disederhanakan)
@@ -416,7 +415,6 @@
         if (!isNovel && screenshots.length) {
             screenshotHTML = `<div class="screenshot-scroller">${screenshots.map(file => `<div class="screenshot-item"><img src="images/screenshots/${projectId}/${file}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" onerror="this.src='https://via.placeholder.com/150x250?text=No+Image'"></div>`).join("")}</div>`;
         } else if (isNovel) {
-            // Untuk novel, kita tampilkan kutipan tambahan
             screenshotHTML = `<div class="screenshot-scroller"><div class="screenshot-item" style="background:#141B2B; color:#A5F3FC; font-size:0.8rem; padding:10px; text-align:center;"><i class="fas fa-quote-left" style="font-size:1.5rem; margin-bottom:5px;"></i><br>"Kita nggak harus mengubah seluruh dunia. Tapi kita harus berusaha untuk tidak membiarkan dunia mengubah kita menjadi sesuatu yang hina."</div>
             <div class="screenshot-item" style="background:#141B2B; color:#A5F3FC; font-size:0.8rem; padding:10px; text-align:center;"><i class="fas fa-quote-left"></i><br>"Kita kerja keras hari ini bukan buat ngasih makan pejabat itu, tapi buat nebus harga diri Riki, dan nebus kewarasan kita sendiri."</div></div>`;
         }
@@ -435,9 +433,9 @@
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">${techHTML}</div>
             ${screenshotHTML}
             <div class="modal-actions">
-                ${isNovel ? `<button class="download-btn" onclick="window.open('https://ansor.studio/layar-retak.pdf', '_blank')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
-                              <button class="download-btn" onclick="window.open('https://ansor.studio/layar-retak.epub', '_blank')"><i class="fas fa-book"></i> Unduh EPUB</button>
-                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="window.open('https://ansor.studio/novel/layar-retak', '_blank')"><i class="fas fa-globe"></i> Baca Online</button>` 
+                ${isNovel ? `<button class="download-btn" onclick="window.open('/novel/layar-retak.pdf', '_blank')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
+                              <button class="download-btn" onclick="window.open('/novel/layar-retak.epub', '_blank')"><i class="fas fa-book"></i> Unduh EPUB</button>
+                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="window.open('/novel/layar-retak.html', '_blank')"><i class="fas fa-globe"></i> Baca Online</button>` 
                 : `<button class="download-btn" onclick="simulateDownload('${title}')">Download APK</button>`}
                 <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>
             </div>
