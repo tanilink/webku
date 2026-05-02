@@ -191,112 +191,143 @@
         const stopBtn = document.getElementById('stopBtn');
         const voiceSelect = document.getElementById('voiceSelect');
 
-        let utterance = null;
-        let isPlaying = false;
+        let textChunks = [];
+        let currentChunkIndex = 0;
         let currentVoice = null;
+        let isPlaying = false;
+        let isPaused = false;
+        
+        // Simpan utterance di global agar tidak di-kill oleh sistem HP (Garbage Collection)
+        window.currentUtterance = null; 
 
-        // Fungsi untuk mengumpulkan teks dari semua chapter
-        function getAllText() {
+        // Fungsi untuk memecah teks menjadi potongan kecil (per paragraf / kalimat)
+        function getTextChunks() {
             const chapters = document.querySelectorAll('.chapter');
-            if (!chapters.length) {
-                console.error('Tidak ada elemen dengan class "chapter" ditemukan.');
-                return "Teks novel tidak tersedia.";
-            }
-            let fullText = '';
+            let chunks = [];
+            
             chapters.forEach(chapter => {
-                // Ambil teks termasuk heading dan paragraf
-                fullText += chapter.innerText + '\n\n';
+                // Pisahkan berdasarkan baris baru (enter)
+                const parts = chapter.innerText.split(/\n+/);
+                parts.forEach(part => {
+                    let text = part.trim();
+                    if (text.length > 0) {
+                        // Jika 1 paragraf masih terlalu panjang (>200 karakter), pecah per kalimat
+                        if (text.length > 200) {
+                            const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+                            sentences.forEach(s => {
+                                if (s.trim()) chunks.push(s.trim());
+                            });
+                        } else {
+                            chunks.push(text);
+                        }
+                    }
+                });
             });
-            return fullText.trim();
+            return chunks;
         }
 
-        // Inisialisasi utterance baru
-        function createUtterance() {
-            if (utterance) {
-                window.speechSynthesis.cancel();
-            }
-            const text = getAllText();
-            if (!text) {
-                alert("Tidak ada teks yang bisa dibacakan.");
-                return null;
-            }
-            const newUtterance = new SpeechSynthesisUtterance(text);
-            newUtterance.lang = 'id-ID';
-            newUtterance.rate = 0.9;
-            newUtterance.pitch = 1.0;
-            newUtterance.volume = 1;
-            if (currentVoice) newUtterance.voice = currentVoice;
-
-            newUtterance.onstart = function() {
-                isPlaying = true;
+        function updateUI() {
+            if (isPlaying && !isPaused) {
                 playBtn.style.display = 'none';
                 pauseBtn.style.display = 'inline-flex';
                 stopBtn.style.display = 'inline-flex';
                 voiceSelect.style.display = 'inline-flex';
-            };
-            newUtterance.onend = function() {
-                resetUI();
-                utterance = null;
-                isPlaying = false;
-            };
-            newUtterance.onerror = function(event) {
-                console.error('SpeechSynthesis error:', event);
-                resetUI();
-                utterance = null;
-                isPlaying = false;
-                alert('Terjadi kesalahan saat memutar audio. Coba lagi nanti.');
-            };
-            return newUtterance;
+            } else if (isPaused) {
+                playBtn.style.display = 'inline-flex';
+                pauseBtn.style.display = 'none';
+                playBtn.innerHTML = '<i class="fas fa-play"></i> Lanjutkan';
+            } else {
+                playBtn.style.display = 'inline-flex';
+                pauseBtn.style.display = 'none';
+                stopBtn.style.display = 'none';
+                voiceSelect.style.display = 'none';
+                playBtn.innerHTML = '<i class="fas fa-play"></i> Dengarkan';
+            }
         }
 
-        function resetUI() {
-            playBtn.style.display = 'inline-flex';
-            pauseBtn.style.display = 'none';
-            stopBtn.style.display = 'none';
-            voiceSelect.style.display = 'none';
-            playBtn.innerHTML = '<i class="fas fa-play"></i> Dengarkan';
-            if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
+        // Fungsi memutar antrean teks
+        function playNextChunk() {
+            if (!isPlaying || currentChunkIndex >= textChunks.length) {
+                isPlaying = false;
+                isPaused = false;
+                currentChunkIndex = 0;
+                updateUI();
+                return;
             }
+
+            const text = textChunks[currentChunkIndex];
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'id-ID';
+            utterance.rate = 0.9;
+            utterance.pitch = 1.0;
+            if (currentVoice) utterance.voice = currentVoice;
+
+            utterance.onend = function() {
+                // Lanjut ke potongan teks berikutnya jika tidak di-pause
+                if (isPlaying && !isPaused) {
+                    currentChunkIndex++;
+                    playNextChunk();
+                }
+            };
+
+            utterance.onerror = function(event) {
+                console.error('SpeechSynthesis error:', event);
+                // Lewati potongan teks yang error (kecuali jika distop sengaja)
+                if (isPlaying && event.error !== 'canceled' && event.error !== 'interrupted') {
+                    currentChunkIndex++;
+                    playNextChunk();
+                }
+            };
+
+            window.currentUtterance = utterance;
+            window.speechSynthesis.speak(utterance);
         }
 
         // Event Play
         playBtn.addEventListener('click', () => {
-            if (isPlaying && window.speechSynthesis.paused) {
-                // Resume
+            if (isPaused) {
                 window.speechSynthesis.resume();
-                playBtn.style.display = 'none';
-                pauseBtn.style.display = 'inline-flex';
-                stopBtn.style.display = 'inline-flex';
+                isPaused = false;
+                isPlaying = true;
+                updateUI();
                 return;
             }
-            if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
+
+            if (isPlaying) return;
+
+            textChunks = getTextChunks();
+            if (textChunks.length === 0) {
+                alert("Tidak ada teks yang bisa dibacakan.");
+                return;
             }
-            utterance = createUtterance();
-            if (utterance) {
-                window.speechSynthesis.speak(utterance);
-            }
+
+            isPlaying = true;
+            isPaused = false;
+            currentChunkIndex = 0;
+            updateUI();
+
+            // Batalkan pembacaan yang nyangkut lalu mulai baca dari awal
+            window.speechSynthesis.cancel();
+            setTimeout(playNextChunk, 100); 
         });
 
         // Event Pause
         pauseBtn.addEventListener('click', () => {
-            if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+            if (window.speechSynthesis.speaking) {
                 window.speechSynthesis.pause();
-                playBtn.style.display = 'inline-flex';
-                pauseBtn.style.display = 'none';
-                playBtn.innerHTML = '<i class="fas fa-play"></i> Lanjutkan';
+                isPaused = true;
+                isPlaying = false;
+                updateUI();
             }
         });
 
         // Event Stop
         stopBtn.addEventListener('click', () => {
-            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-                window.speechSynthesis.cancel();
-                resetUI();
-                utterance = null;
-                isPlaying = false;
-            }
+            isPlaying = false;
+            isPaused = false;
+            currentChunkIndex = 0;
+            window.speechSynthesis.cancel();
+            updateUI();
         });
 
         // Daftar suara
@@ -313,35 +344,25 @@
                 voiceSelect.appendChild(option);
             });
         }
+        
         loadVoices();
         if (window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
+        // Event saat ganti suara
         voiceSelect.addEventListener('change', (e) => {
             const selectedName = e.target.value;
-            if (!selectedName) {
-                currentVoice = null;
-                return;
-            }
-            const selected = availableVoices.find(v => v.name === selectedName);
-            if (selected) {
-                currentVoice = selected;
-                if (utterance) {
-                    utterance.voice = currentVoice;
-                    if (window.speechSynthesis.speaking) {
-                        // restart dengan suara baru
-                        const wasPlaying = window.speechSynthesis.speaking;
-                        window.speechSynthesis.cancel();
-                        utterance = createUtterance();
-                        if (utterance) {
-                            window.speechSynthesis.speak(utterance);
-                        }
-                    }
-                }
+            currentVoice = selectedName ? availableVoices.find(v => v.name === selectedName) : null;
+            
+            // Jika sedang membaca, hentikan lalu baca ulang kalimat yang sama dengan suara baru
+            if (isPlaying && !isPaused) {
+                window.speechSynthesis.cancel();
+                setTimeout(playNextChunk, 100);
             }
         });
     })();
 </script>
+
 </body>
 </html>
