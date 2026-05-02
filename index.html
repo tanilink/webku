@@ -196,184 +196,6 @@
         .screenshot-item { min-width: 120px; height: 200px; background: #1A2639; border-radius: 12px; border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .modal-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
 
-        /* ============================================= */
-        /* NEW CSS FOR BOT SERVICES SECTION – START */
-        /* ============================================= */
-        .bot-services {
-            margin-top: 60px;
-            padding: 40px 20px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            backdrop-filter: var(--glass-blur);
-            position: relative;
-            overflow: hidden;
-        }
-        .bot-services::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
-            background: var(--accent-gradient);
-        }
-        .bot-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .bot-header h2 {
-            font-size: 1.8rem;
-            color: white;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .bot-header h2 i {
-            color: var(--accent-primary);
-            font-size: 1.6rem;
-        }
-        .bot-header p {
-            color: var(--text-subtle);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-        }
-        .bot-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-        @media (min-width: 768px) {
-            .bot-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        .bot-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-        .bot-card:hover {
-            border-color: var(--border-accent);
-            background: var(--bg-card-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px -10px rgba(34, 211, 238, 0.15);
-        }
-        .bot-card h3 {
-            font-size: 1.3rem;
-            color: white;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .bot-card h3 i {
-            color: var(--accent-primary);
-        }
-        .ai-badge {
-            font-size: 0.6rem;
-            background: rgba(34, 211, 238, 0.2);
-            color: #A5F3FC;
-            padding: 2px 10px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border: 1px solid rgba(34, 211, 238, 0.4);
-            display: inline-block;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-        .project-list {
-            list-style: none;
-            margin: 20px 0;
-            padding: 0;
-        }
-        .project-list li {
-            margin-bottom: 12px;
-            font-size: 0.85rem;
-            color: var(--text-subtle);
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            line-height: 1.5;
-        }
-        .project-list li i {
-            color: var(--accent-primary);
-            font-size: 0.9rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-        .price-range {
-            background: rgba(34, 211, 238, 0.04);
-            border: 1px dashed rgba(34, 211, 238, 0.3);
-            border-radius: 12px;
-            padding: 16px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .price-range .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 5px;
-        }
-        .price-range .value {
-            font-size: 1.1rem;
-            font-weight: 700;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-        .price-range .note {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-        .cta-bot {
-            text-align: center;
-            background: linear-gradient(145deg, rgba(34,211,238,0.1), rgba(45,212,191,0.05));
-            border: 1px solid var(--border-accent);
-            border-radius: var(--radius-md);
-            padding: 30px 20px;
-            backdrop-filter: blur(12px);
-        }
-        .cta-bot p {
-            color: var(--text-body);
-        }
-        .wa-bot-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            margin-top: 10px;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-        }
-        .wa-bot-btn:hover {
-            background: #1da851;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
-        }
-        /* ============================================= */
-        /* NEW CSS FOR BOT SERVICES SECTION – END */
-        /* ============================================= */
-
         @keyframes floatMorph {
             0%, 100% { border-radius: 38% 62% 54% 46% / 46% 42% 58% 54%; transform: translateY(0); }
             50% { border-radius: 46% 54% 38% 62% / 58% 46% 54% 42%; transform: translateY(-12px); }
@@ -523,62 +345,24 @@
                 <div class="card-footer"><span class="detail-link"><i class="fas fa-bell"></i> Notifikasi</span><span class="detail-link">Preview <i class="fas fa-eye"></i></span></div>
             </div>
 
-            
-        
-
-        <!-- NEW SECTION: LAYANAN BOT TELEGRAM & WHATSAPP -->
-        <div class="bot-services">
-            <div class="bot-header">
-                <h2><i class="fab fa-telegram"></i> <i class="fab fa-whatsapp"></i> Automation Bot Services</h2>
-                <p>Optimalkan bisnis Anda dengan bot pintar berbasis AI. Lebih dari 7 tahun pengalaman membangun solusi otomatisasi untuk berbagai skala usaha.</p>
-            </div>
-
-            <div class="bot-grid">
-                <!-- Kolom Telegram -->
-                <div class="bot-card">
-                    <h3><i class="fab fa-telegram"></i> Telegram Bot <span class="ai-badge">+AI Ready</span></h3>
-                    <p style="margin-bottom: 15px;">Solusi otomatisasi untuk bisnis Anda dengan keandalan dan kecepatan tinggi.</p>
-                    <ul class="project-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Absensi Karyawan</strong> – Multi-cabang, realtime report (Toko HP, Retail)</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Food / Digital Product</strong> – Jual beli produk digital dengan payment gateway otomatis (Midtrans, Xendit)</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Customer Service AI</strong> – Chatbot pintar menggunakan NLP untuk menjawab pertanyaan, hitung harga, dsb.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Monitoring & Reporting</strong> – Otomatis laporan penjualan, stok, dan notifikasi.</li>
-                    </ul>
-                    <div class="price-range">
-                        <div class="label">💰 INVESTASI MULAI DARI</div>
-                        <div class="value">Rp 300.000 - Rp 12.000.000</div>
-                        <div class="note">*Tergantung kompleksitas fitur dan integrasi AI. Konsultasi gratis.</div>
-                    </div>
-                </div>
-
-                <!-- Kolom WhatsApp -->
-                <div class="bot-card">
-                    <h3><i class="fab fa-whatsapp"></i> WhatsApp Bot <span class="ai-badge">Business API</span></h3>
-                    <p style="margin-bottom: 15px;">Manfaatkan platform paling populer untuk interaksi pelanggan 24/7.</p>
-                    <ul class="project-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Jual Beli Digital</strong> – Otomatis pembayaran, pengiriman voucher, dan konfirmasi.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Pengaduan & Layanan Kelurahan</strong> – Sistem online untuk warga (keluhan, info, surat).</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Customer Service + AI</strong> – Balas pesan otomatis, booking, FAQ interaktif.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Marketing & Broadcast</strong> – Kirim promosi, notifikasi terjadwal, analitik.</li>
-                    </ul>
-                    <div class="price-range">
-                        <div class="label">💰 HARGA BERDASARKAN KEBUTUHAN</div>
-                        <div class="value">Rp 500.000 - Rp 12.000.000</div>
-                        <div class="note">*Integrasi dengan API resmi WhatsApp Business tersedia.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Hubungi -->
-            <div class="cta-bot">
-                <p style="font-size: 1.1rem; margin-bottom: 20px;">📢 Konsultasikan kebutuhan bot Anda secara gratis. Dapatkan penawaran sesuai budget dan fitur yang diinginkan.</p>
-                <a href="https://wa.me/6287859000779?text=Halo%20Mas%20Ansor%2C%20saya%20tertarik%20dengan%20layanan%20bot%20Telegram%2FWhatsApp.%20Saya%20ingin%20konsultasi%20mengenai%20proyek%20%5Bsebutkan%5D" class="wa-bot-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
-                </a>
-                <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">Respon cepat • Garansi pengerjaan • Support pasca launching</p>
+            <div class="project-card" data-category="web" data-recent="false">
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-store"></i></div><div class="badge-group"><span class="badge primary">BISNIS</span><span class="badge">BETA</span></div></div>
+                <h3 class="project-title">TokoUMKM</h3>
+                <p class="project-desc">Platform toko online + POS untuk UMKM. Integrasi marketplace & manajemen inventaris.</p>
+                <div class="tech-stack"><span class="tech-tag">Vue.js</span><span class="tech-tag">Firebase</span><span class="tech-tag">Tailwind</span></div>
+                <div class="card-footer"><span class="download-btn"><i class="fas fa-download"></i> Demo</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
         </div>
-        
+
+        <!-- SPOTLIGHT SECTION (tetap) -->
+        <div class="spotlight-section">
+            <div class="spotlight-header"><i class="fas fa-crown"></i><h2>Project unggulan</h2></div>
+            <div class="spotlight-grid">
+                <div><div class="spotlight-badge"><i class="fas fa-trophy"></i> 5.000+ unduhan</div><h3 class="spotlight-title">Markaz Laundry <span style="color: var(--accent-primary);">Pro</span></h3><p class="spotlight-desc">Versi terbaru dengan AI prediksi pendapatan dan manajemen karyawan. Tersedia dalam 30 hari.</p><div class="spotlight-actions"><span class="wa-button" style="background: var(--accent-primary); color: black;"><i class="fas fa-star"></i> Early access</span><span class="wa-button"><i class="fas fa-video"></i> Demo</span></div></div>
+                <div class="spotlight-preview"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+        </div>
+
         <footer class="cosmic-footer">
             <div class="footer-brand"><div style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-cube" style="color: var(--accent-primary); font-size: 1.8rem;"></i><span style="font-size: 1.4rem; font-weight: 700; color: white;">Ansor<span style="color: var(--accent-primary);">.</span>studio</span></div><p>Membangun ekosistem digital dengan ketelitian dan hati. Setiap kode adalah cerita.</p><div class="social-links"><a href="#" class="social-icon"><i class="fab fa-github"></i></a><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a></div></div>
             <div class="footer-links"><h4>Eksplorasi</h4><ul><li><a href="#"><i class="fas fa-chevron-right"></i> Portfolio</a></li><li><a href="https://wa.me/6287859000779?text=Halo%20Mas%20Ansor%2C%20saya%20lihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20diskusi%20mengenai%20pembuatan%20aplikasi%2Fwebsite.%20Apakah%20ada%20waktu%20untuk%20ngobrol%20santai%3F"><i class="fas fa-chevron-right"></i> Layanan</a></li><li><a href="https://wa.me/6287859000779?text=Halo%20Mas%20Ansor%2C%20saya%20ingin%20bertanya%20mengenai%20panduan%20atau%20tutorial%20penggunaan%20aplikasi%20Anda.%20Bisa%20dibantu%3F"><i class="fas fa-chevron-right"></i> Tutorial</a></li></ul></div>
