@@ -162,6 +162,190 @@
         .spotlight-preview { background: rgba(34,211,238,0.02); border-radius: 24px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05); padding: 30px; }
         .spotlight-preview i { font-size: 4rem; color: rgba(255,255,255,0.1); }
 
+        /* Bot Services Section */
+        .bot-services {
+            margin-top: 70px;
+            background: rgba(45, 212, 191, 0.02);
+            border-radius: var(--radius-xl);
+            padding: 40px 0 20px;
+        }
+        .bot-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .bot-header h2 {
+            font-size: 2rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        .bot-header p {
+            max-width: 700px;
+            margin: 12px auto 0;
+            color: var(--text-subtle);
+        }
+        .bot-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        @media (min-width: 768px) { .bot-grid { grid-template-columns: 1fr 1fr; } }
+        .bot-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: var(--transition-smooth);
+        }
+        .bot-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-accent);
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
+        }
+        .bot-card h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bot-card h3 i {
+            color: var(--accent-primary);
+            font-size: 1.8rem;
+        }
+        .project-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .project-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-body);
+        }
+        .project-list li i {
+            color: var(--accent-primary);
+            width: 24px;
+            text-align: center;
+        }
+        .price-range {
+            background: rgba(34, 211, 238, 0.08);
+            border-left: 4px solid var(--accent-primary);
+            padding: 16px 20px;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+        .price-range .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+        .price-range .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-top: 5px;
+        }
+        .price-range .note {
+            font-size: 0.75rem;
+            color: var(--text-subtle);
+            margin-top: 8px;
+        }
+        .ai-badge {
+            background: linear-gradient(135deg, #8B5CF6, #22D3EE);
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+            margin-left: 12px;
+        }
+        .cta-bot {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px 20px;
+            background: rgba(34,211,238,0.05);
+            border-radius: var(--radius-lg);
+            border: 1px dashed var(--border-accent);
+        }
+        .wa-bot-btn {
+            background: #25D366;
+            color: black;
+            padding: 14px 32px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+        .wa-bot-btn:hover {
+            background: #20b859;
+            transform: scale(1.02);
+            color: white;
+        }
+
+        /* Additional styles for tables inside modal */
+        .modal-desc table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .modal-desc th, .modal-desc td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .modal-desc th {
+            background: rgba(34,211,238,0.1);
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+        .modal-desc tr:last-child td {
+            border-bottom: none;
+        }
+        .highlight-box {
+            background: rgba(34,211,238,0.05);
+            padding: 15px;
+            border-radius: 16px;
+            margin: 15px 0;
+            border-left: 3px solid var(--accent-primary);
+        }
+        .flex-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .stat-card {
+            background: rgba(0,0,0,0.3);
+            padding: 12px 20px;
+            border-radius: 12px;
+            flex: 1;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        .stat-card .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
         /* Footer */
         .cosmic-footer { margin-top: 80px; padding: 40px 0 30px; border-top: 1px solid rgba(34,211,238,0.1); display: grid; grid-template-columns: 1fr; gap: 40px; }
         @media (min-width: 640px) { .cosmic-footer { grid-template-columns: 1fr 1fr; } }
@@ -220,9 +404,9 @@
             <div class="hero-content">
                 <span class="greeting-chip"><i class="fas fa-hand-sparkles"></i> Hello, I'm</span>
                 <h1 class="hero-title">Mas <span class="gradient-text">Ansor</span></h1>
-                <div class="hero-desc">Android & Web Artisan. Membangun solusi digital dengan presisi dan estetika. 4+ tahun merangkai kode menjadi produk yang bermanfaat.</div>
+                <div class="hero-desc">Android & Web Artisan. Membangun solusi digital dengan presisi dan estetika. 7+ tahun merangkai kode menjadi produk yang bermanfaat.</div>
                 <div class="stats-container">
-                    <div class="stat-item"><span class="stat-number">8+</span><span class="stat-label">Proyek</span></div>
+                    <div class="stat-item"><span class="stat-number">18+</span><span class="stat-label">Proyek Bot</span></div>
                     <div class="stat-item"><span class="stat-number">2.5k+</span><span class="stat-label">Downloads</span></div>
                     <div class="stat-item"><span class="stat-number">⭐ 4.9</span><span class="stat-label">Rating</span></div>
                 </div>
@@ -244,7 +428,7 @@
         <!-- PROJECT GRID -->
         <div class="projects-grid">
 
-            <!-- PROYEK PPOB GARUDATEL (TAMBAHAN BARU) -->
+            <!-- GarudaTel PPOB -->
             <div class="project-card" data-category="web" data-recent="true" onclick="openProjectModal('garudatel')">
                 <div class="card-header">
                     <div class="icon-wrapper"><i class="fas fa-credit-card"></i></div>
@@ -259,9 +443,10 @@
                 </div>
             </div>
 
+            <!-- Smart HPP -->
             <div class="project-card" data-category="web" data-recent="true" onclick="openProjectModal('Smart HPP')">
                 <div class="card-header">
-                    <div class="icon-wrapper"><img src="images/icons/hpp.png" style="width:100%;height:100%;object-fit:contain;" onerror="this.outerHTML='<i class=\'fas fa-cube\'></i>'"></div>
+                    <div class="icon-wrapper"><i class="fas fa-calculator"></i></div>
                     <div class="badge-group"><span class="badge primary">PRODUKTIVITAS</span><span class="badge">v1.0</span></div>
                 </div>
                 <h3 class="project-title">Smart HPP</h3>
@@ -272,56 +457,62 @@
                     <span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
-            <!-- Kartu yang sudah ada (ditambahkan atribut data-category) -->
+
+            <!-- Ayam SorrI -->
             <div class="project-card" data-category="web" data-recent="false" onclick="openProjectModal('ayamsorri')">
-                <div class="card-header"><div class="icon-wrapper"><img src="images/icons/ayamsorri.png" style="width:100%;height:100%;object-fit:contain;"></div><div class="badge-group"><span class="badge primary">GAME</span><span class="badge">v2.7</span></div></div>
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-drumstick-bite"></i></div><div class="badge-group"><span class="badge primary">GAME</span><span class="badge">v2.7</span></div></div>
                 <h3 class="project-title">Ayam SorrI</h3>
                 <p class="project-desc">Bantu si Ayam Jago mengepakkan sayapnya melewati rintangan pipa-pipa retro yang menantang! Terinspirasi dari game legendaris, Flappy Chicken hadir dengan kejutan yang lebih seru dan bikin geregetan.</p>
                 <div class="tech-stack"><span class="tech-tag">HTML5</span><span class="tech-tag">Vanilla JavaScript</span></div>
                 <div class="card-footer"><span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Ayam SorrI')"><i class="fas fa-download"></i> APK</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
 
+            <!-- Scanner Pro -->
             <div class="project-card" data-category="web" data-recent="false" onclick="openProjectModal('scannerpro')">
-                <div class="card-header"><div class="icon-wrapper"><img src="images/icons/scannerpro.png" style="width:100%;height:100%;object-fit:contain;"></div><div class="badge-group"><span class="badge primary">PRO</span><span class="badge">v2.7</span></div></div>
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-search"></i></div><div class="badge-group"><span class="badge primary">PRO</span><span class="badge">v2.7</span></div></div>
                 <h3 class="project-title">Scanner Pro</h3>
                 <p class="project-desc">Alat canggih dan praktis untuk mencari ratusan subdomain dan memindai IP aktif (Cloudflare / Non-CF) hanya dengan satu sentuhan jari!</p>
                 <div class="tech-stack"><span class="tech-tag">HTML5</span><span class="tech-tag">Vanilla JavaScript</span><span class="tech-tag">Fetch API</span><span class="tech-tag">Express.js</span><span class="tech-tag">net.Socket</span><span class="tech-tag">Axios</span></div>
                 <div class="card-footer"><span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Scanner Pro')"><i class="fas fa-download"></i> APK</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
 
+            <!-- Mas Ansor Mail -->
             <div class="project-card" data-category="web" data-recent="false" onclick="openProjectModal('masansor-mail')">
-                <div class="card-header"><div class="icon-wrapper"><img src="images/icons/msmail.png" style="width:100%;height:100%;object-fit:contain;"></div><div class="badge-group"><span class="badge primary">PROKDUTIVITAS</span><span class="badge">v2.0</span></div></div>
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-envelope"></i></div><div class="badge-group"><span class="badge primary">PRODUKTIVITAS</span><span class="badge">v2.0</span></div></div>
                 <h3 class="project-title">Mas Ansor Mail</h3>
                 <p class="project-desc">MasAnsorMail adalah Platform ini memungkinkan pembuatan alamat email sementara secara cepat, aman, dan efisien untuk kebutuhan testing, registrasi aplikasi, automation, maupun proteksi privasi digital.</p>
                 <div class="tech-stack"><span class="tech-tag">JavaScript</span><span class="tech-tag">Html</span><span class="tech-tag">Node</span><span class="tech-tag">Firebase</span></div>
                 <div class="card-footer"><span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Mas Ansor Mail')"><i class="fas fa-download"></i> APK</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
 
+            <!-- Moeslem Daily Tracker -->
             <div class="project-card" data-category="web" data-recent="false" onclick="openProjectModal('moeslem-daily-tracker')">
-                <div class="card-header"><div class="icon-wrapper"><img src="images/icons/moeslem-daily-tracker.png" style="width:100%;height:100%;object-fit:contain;"></div><div class="badge-group"><span class="badge primary">PRODUKTIVITAS</span><span class="badge">V2.0</span></div></div>
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-mosque"></i></div><div class="badge-group"><span class="badge primary">PRODUKTIVITAS</span><span class="badge">V2.0</span></div></div>
                 <h3 class="project-title">Moeslem Daily Tracker</h3>
                 <p class="project-desc">Moeslem Daily Tracker adalah aplikasi asisten digital yang dirancang khusus untuk membantu umat Muslim mengelola ibadah harian dan membangun kebiasaan baik (habit tracking) secara konsisten.</p>
                 <div class="tech-stack"><span class="tech-tag">HTML</span><span class="tech-tag">JAVASCRIPT</span><span class="tech-tag">WA API</span></div>
                 <div class="card-footer"><span class="download-btn" onclick="event.stopPropagation(); simulateDownload('moeslem-daily-tracker')"><i class="fas fa-download"></i> APK</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
 
+            <!-- Markaz Laundry -->
             <div class="project-card" data-category="android" data-recent="false" onclick="openProjectModal('markaz')">
-                <div class="card-header"><div class="icon-wrapper"><img src="images/icons/icon-markaz-laundry.png" style="width:100%;height:100%;object-fit:contain;"></div><div class="badge-group"><span class="badge primary">PRODUKTIVITAS</span><span class="badge">v2.4</span></div></div>
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-tshirt"></i></div><div class="badge-group"><span class="badge primary">PRODUKTIVITAS</span><span class="badge">v2.4</span></div></div>
                 <h3 class="project-title">Markaz Laundry</h3>
                 <p class="project-desc">Manajemen laundry all-in-one. Notifikasi WA otomatis, laporan keuangan realtime, multi-outlet.</p>
                 <div class="tech-stack"><span class="tech-tag">Kotlin</span><span class="tech-tag">Firebase</span><span class="tech-tag">WA API</span></div>
                 <div class="card-footer"><span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Markaz Laundry APK')"><i class="fas fa-download"></i> APK</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
 
+            <!-- Desa Kebonrejo -->
             <div class="project-card" data-category="web" data-recent="false" onclick="openProjectModal('desa')">
-                <div class="card-header"><div class="icon-wrapper"><img src="images/icons/icon-web-desa.png" style="width:100%;height:100%;object-fit:contain;"></div><div class="badge-group"><span class="badge primary">LAYANAN</span><span class="badge">GRATIS</span></div></div>
+                <div class="card-header"><div class="icon-wrapper"><i class="fas fa-landmark"></i></div><div class="badge-group"><span class="badge primary">LAYANAN</span><span class="badge">GRATIS</span></div></div>
                 <h3 class="project-title">Desa Kebonrejo</h3>
                 <p class="project-desc">Portal desa digital. Surat online, informasi desa, transparansi anggaran. 2.000+ warga.</p>
                 <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span></div>
                 <div class="card-footer"><span class="download-btn" onclick="event.stopPropagation(); simulateDownload('Desa Kebonrejo App')"><i class="fas fa-download"></i> Download</span><span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span></div>
             </div>
 
-            <!-- Kartu Novel: Layar Retak -->
+            <!-- Layar Retak (Novel) -->
             <div class="project-card" data-category="literasi" data-recent="true" onclick="openProjectModal('layarretak')">
                 <div class="card-header">
                     <div class="icon-wrapper"><i class="fas fa-book-open"></i></div>
@@ -336,7 +527,7 @@
                 </div>
             </div>
 
-            <!-- Proyek lainnya (Kasir Pintar, TokoUMKM) dengan atribut data-category -->
+            <!-- Kasir Pintar (COMING SOON) -->
             <div class="project-card" data-category="android" data-recent="false" style="border: 1px dashed rgba(251,191,36,0.5);">
                 <div class="card-header"><div class="icon-wrapper" style="color: #FBBF24;"><i class="fas fa-cash-register"></i></div><div class="badge-group"><span class="badge" style="background: rgba(251,191,36,0.1);">COMING SOON</span></div></div>
                 <h3 class="project-title">Kasir Pintar</h3>
@@ -345,6 +536,7 @@
                 <div class="card-footer"><span class="detail-link"><i class="fas fa-bell"></i> Notifikasi</span><span class="detail-link">Preview <i class="fas fa-eye"></i></span></div>
             </div>
 
+            <!-- TokoUMKM -->
             <div class="project-card" data-category="web" data-recent="false">
                 <div class="card-header"><div class="icon-wrapper"><i class="fas fa-store"></i></div><div class="badge-group"><span class="badge primary">BISNIS</span><span class="badge">BETA</span></div></div>
                 <h3 class="project-title">TokoUMKM</h3>
@@ -354,12 +546,56 @@
             </div>
         </div>
 
-        <!-- SPOTLIGHT SECTION (tetap) -->
+        <!-- SPOTLIGHT SECTION -->
         <div class="spotlight-section">
             <div class="spotlight-header"><i class="fas fa-crown"></i><h2>Project unggulan</h2></div>
             <div class="spotlight-grid">
                 <div><div class="spotlight-badge"><i class="fas fa-trophy"></i> 5.000+ unduhan</div><h3 class="spotlight-title">Markaz Laundry <span style="color: var(--accent-primary);">Pro</span></h3><p class="spotlight-desc">Versi terbaru dengan AI prediksi pendapatan dan manajemen karyawan. Tersedia dalam 30 hari.</p><div class="spotlight-actions"><span class="wa-button" style="background: var(--accent-primary); color: black;"><i class="fas fa-star"></i> Early access</span><span class="wa-button"><i class="fas fa-video"></i> Demo</span></div></div>
                 <div class="spotlight-preview"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+        </div>
+
+        <!-- BOT SERVICES SECTION -->
+        <div class="bot-services">
+            <div class="bot-header">
+                <h2><i class="fab fa-telegram"></i> <i class="fab fa-whatsapp"></i> Automation Bot Services</h2>
+                <p>Optimalkan bisnis Anda dengan bot pintar berbasis AI. Lebih dari 7 tahun pengalaman membangun solusi otomatisasi untuk berbagai skala usaha.</p>
+            </div>
+            <div class="bot-grid">
+                <div class="bot-card">
+                    <h3><i class="fab fa-telegram"></i> Telegram Bot <span class="ai-badge">+AI Ready</span></h3>
+                    <ul class="project-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Absensi Karyawan</strong> – Multi-cabang, realtime report</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Food / Digital Product</strong> – Payment gateway otomatis</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Customer Service AI</strong> – NLP, hitung harga, FAQ</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Monitoring & Reporting</strong> – Laporan penjualan & stok</li>
+                    </ul>
+                    <div class="price-range">
+                        <div class="label">💰 INVESTASI</div>
+                        <div class="value">Rp 300.000 - Rp 12.000.000</div>
+                        <div class="note">Tergantung kompleksitas & integrasi AI</div>
+                    </div>
+                </div>
+                <div class="bot-card">
+                    <h3><i class="fab fa-whatsapp"></i> WhatsApp Bot <span class="ai-badge">Business API</span></h3>
+                    <ul class="project-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Jual Beli Digital</strong> – Pembayaran & pengiriman otomatis</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Pengaduan Kelurahan</strong> – Layanan online warga</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Customer Service + AI</strong> – Balas otomatis, booking</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot Marketing & Broadcast</strong> – Promosi terjadwal</li>
+                    </ul>
+                    <div class="price-range">
+                        <div class="label">💰 HARGA</div>
+                        <div class="value">Rp 500.000 - Rp 12.000.000</div>
+                        <div class="note">Integrasi API resmi WhatsApp Business</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-bot">
+                <p>📢 Konsultasi gratis! Dapatkan penawaran sesuai kebutuhan.</p>
+                <a href="https://wa.me/6287859000779?text=Halo%20Mas%20Ansor%2C%20saya%20tertarik%20dengan%20layanan%20bot%20Telegram%2FWhatsApp." class="wa-bot-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                </a>
             </div>
         </div>
 
@@ -382,7 +618,7 @@
         else nav.classList.remove('scrolled');
     });
 
-    // Filter projects berdasarkan kategori
+    // Filter projects
     function filterProjects(category) {
         const cards = document.querySelectorAll('.project-card');
         cards.forEach(card => {
@@ -398,13 +634,11 @@
         });
     }
 
-    // Event listener untuk filter chips
     document.querySelectorAll('.filter-chip').forEach(chip => {
         chip.addEventListener('click', function() {
             document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
             this.classList.add('active');
-            const filterValue = this.getAttribute('data-filter');
-            filterProjects(filterValue);
+            filterProjects(this.getAttribute('data-filter'));
         });
     });
 
@@ -412,51 +646,251 @@
     const modalContent = document.getElementById('modalContent');
 
     function openProjectModal(projectId) {
-        let title, icon, version, size, fullDesc, techs = [], screenshots = [], isNovel = false;
+        let title, icon, version, size, fullDesc = '', techs = [], screenshots = [], isNovel = false;
 
-        if (projectId === 'garudatel') {
+        // ----- SMART HPP (Detail lengkap sesuai gambar) -----
+        if (projectId === 'Smart HPP') {
+            title = 'Smart HPP';
+            icon = 'calculator';
+            version = 'v1.0';
+            size = '2 MB';
+            fullDesc = `
+                <p>Sistem Kasir & HPP Pintar (Smart POS) adalah aplikasi web untuk UMKM yang menggabungkan fitur manajemen kasir, stok, dan Kalkulator HPP untuk menghitung modal per porsi secara akurat.</p>
+                <div class="highlight-box">
+                    <strong>✨ Fitur Utama:</strong> Manajemen stok realtime, hitung HPP otomatis, laporan laba rugi, multi-user, dan export data.
+                </div>
+                <h4>📦 Modal Bahan (Contoh)</h4>
+                <table>
+                    <thead><tr><th>Nama Bahan</th><th>Harga</th></tr></thead>
+                    <tbody>
+                        <tr><td>Beras Pera (1 Kg)</td><td>Rp 16.000</td></tr>
+                        <tr><td>Bumbu (lengkap)</td><td>Rp 15.000</td></tr>
+                        <tr><td>Daging Ayam (500gr)</td><td>Rp 25.000</td></tr>
+                        <tr><td>Minyak & Gas</td><td>Rp 5.000</td></tr>
+                        <tr><td><strong>Total Modal per Porsi</strong></td><td><strong>Rp 61.000</strong></td></tr>
+                    </tbody>
+                </table>
+                <h4>📝 Daftar Pesanan Hari Ini</h4>
+                <table>
+                    <thead><tr><th>Menu</th><th>Qty</th><th>Harga</th><th>Subtotal</th></tr></thead>
+                    <tbody>
+                        <tr><td>Nasi Goreng Spesial</td><td>2</td><td>25.000</td><td>50.000</td></tr>
+                        <tr><td>Ayam Geprek</td><td>1</td><td>18.000</td><td>18.000</td></tr>
+                        <tr><td>Es Teh Manis</td><td>3</td><td>5.000</td><td>15.000</td></tr>
+                        <tr><td><strong>Total</strong></td><td colspan="3"><strong>Rp 83.000</strong></td></tr>
+                    </tbody>
+                </table>
+                <div class="flex-stats">
+                    <div class="stat-card"><div class="number">Rp 38.500</div><div class="label">Omset Bersih</div></div>
+                    <div class="stat-card"><div class="number">Rp 51.500</div><div class="label">Laba Kotor</div></div>
+                    <div class="stat-card"><div class="number">24%</div><div class="label">Margin</div></div>
+                </div>
+                <p><i class="fas fa-chart-line"></i> <strong>Analitik Real-Time:</strong> Grafik penjualan harian, peringatan stok menipis, dan rekapan pembayaran (tunai/QRIS).</p>
+            `;
+            techs = ['React.js', 'HTML5', 'CSS3', 'Modern JavaScript'];
+            screenshots = [];
+        }
+        // ----- GarudaTel PPOB -----
+        else if (projectId === 'garudatel') {
             title = 'GarudaTel PPOB';
             icon = 'credit-card';
             version = 'v1.0';
             size = 'Web App';
-            fullDesc = `GarudaTel PPOB adalah platform <strong>Payment Point Online Bank (PPOB)</strong> yang memudahkan masyarakat dalam melakukan berbagai pembayaran tagihan secara online. Layanan yang tersedia meliputi:
-            <br><br>
-            <ul style="margin-left: 20px; margin-top: 8px;">
-                <li>💳 Pembayaran tagihan listrik, air, BPJS, dan telepon</li>
-                <li>📱 Isi ulang pulsa, paket data, dan token listrik</li>
-                <li>🎮 Voucher game & e-money</li>
-                <li>🏦 Transfer bank & tarik tunai (QRIS)</li>
-                <li>📊 Laporan transaksi dan manajemen deposit</li>
-            </ul>
-            <br>
-            Dirancang dengan antarmuka yang responsif, aman, dan terintegrasi dengan Midtrans serta berbagai provider PPOB terpercaya. Cocok untuk digunakan oleh agen pulsa, konter, maupun individu yang ingin bertransaksi praktis tanpa keluar rumah.`;
-            techs = ['Laravel 10', 'MySQL', 'Midtrans Payment Gateway', 'Bootstrap 5', 'jQuery', 'AJAX'];
-            screenshots = []; // opsional: bisa ditambahkan screenshoot jika ada
+            fullDesc = `
+                <p>GarudaTel PPOB adalah platform <strong>Payment Point Online Bank</strong> yang memudahkan pembayaran tagihan, pulsa, paket data, listrik, BPJS, dan berbagai layanan digital.</p>
+                <div class="highlight-box"><strong>⚡ Layanan Tersedia:</strong> PLN token & pascabayar, PDAM, BPJS Kesehatan, Telkom, Pulsa semua operator, Voucher game, E-money, dan QRIS.</div>
+                <h4>📊 Statistik Transaksi (contoh)</h4>
+                <table>
+                    <thead><tr><th>Layanan</th><th>Total Transaksi</th><th>Nominal (Rp)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Listrik</td><td>342</td><td>42.500.000</td></tr>
+                        <tr><td>Pulsa & Data</td><td>1.280</td><td>28.750.000</td></tr>
+                        <tr><td>BPJS</td><td>210</td><td>14.700.000</td></tr>
+                        <tr><td>Game Voucher</td><td>95</td><td>5.500.000</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fas fa-shield-alt"></i> <strong>Keamanan:</strong> Midtrans payment gateway, enkripsi SSL, dan laporan transaksi realtime.</p>
+            `;
+            techs = ['Laravel 10', 'MySQL', 'Midtrans', 'Bootstrap 5', 'jQuery', 'AJAX'];
+            screenshots = [];
         }
+        // ----- Markaz Laundry -----
+        else if (projectId === 'markaz') {
+            title = 'Markaz Laundry';
+            icon = 'tshirt';
+            version = 'v2.4.1';
+            size = '18 MB';
+            fullDesc = `
+                <p>Aplikasi manajemen laundry all-in-one dengan notifikasi WhatsApp otomatis, laporan keuangan realtime, dan multi-outlet.</p>
+                <div class="highlight-box"><strong>🧺 Fitur Unggulan:</strong> Manajemen pelanggan & membership, tarif bervariasi (kg/satuan), dashboard outlet, export Excel, dan backup cloud.</div>
+                <h4>📈 Ringkasan Bulan Ini</h4>
+                <table>
+                    <thead><tr><th>Outlet</th><th>Order Selesai</th><th>Pendapatan</th></tr></thead>
+                    <tbody>
+                        <tr><td>Cabang A</td><td>245</td><td>Rp 12.250.000</td></tr>
+                        <tr><td>Cabang B</td><td>187</td><td>Rp 8.930.000</td></tr>
+                        <tr><td>Cabang C</td><td>312</td><td>Rp 15.600.000</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fab fa-whatsapp"></i> <strong>Notifikasi WA:</strong> Pesanan siap, promo, dan reminder membership terintegrasi dengan API official.</p>
+            `;
+            techs = ['Kotlin', 'Firebase', 'Retrofit', 'FCM'];
+            screenshots = [];
+        }
+        // ----- Desa Kebonrejo -----
+        else if (projectId === 'desa') {
+            title = 'Desa Kebonrejo';
+            icon = 'landmark';
+            version = '3.0.2';
+            size = '22 MB';
+            fullDesc = `
+                <p>Portal desa digital untuk pelayanan publik, informasi desa, dan transparansi anggaran. Telah digunakan oleh 2.000+ warga.</p>
+                <div class="highlight-box"><strong>🏡 Layanan Online:</strong> Surat keterangan domisili, pengaduan warga, informasi agenda desa, dan monitoring BUMDes.</div>
+                <h4>📄 Statistik Layanan (Bulan Ini)</h4>
+                <table>
+                    <thead><tr><th>Jenis Surat</th><th>Jumlah</th><th>Diproses</th></tr></thead>
+                    <tbody>
+                        <tr><td>SKTM</td><td>45</td><td>43</td></tr>
+                        <tr><td>Domisili Usaha</td><td>28</td><td>27</td></tr>
+                        <tr><td>Keterangan Pindah</td><td>19</td><td>19</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fas fa-chart-pie"></i> <strong>Transparansi Anggaran:</strong> Realisasi APBDes, proyek infrastruktur, dan donasi warga dapat dilihat publik.</p>
+            `;
+            techs = ['Flutter', 'Laravel', 'MySQL', 'REST API'];
+            screenshots = [];
+        }
+        // ----- Moeslem Daily Tracker -----
+        else if (projectId === 'moeslem-daily-tracker') {
+            title = 'Moeslem Daily Tracker';
+            icon = 'mosque';
+            version = 'V2.0';
+            size = '2 MB';
+            fullDesc = `
+                <p>Asisten digital untuk membantu umat Muslim mengelola ibadah harian dan membangun kebiasaan baik (habit tracking) secara konsisten.</p>
+                <div class="highlight-box"><strong>🕌 Fitur:</strong> Jadwal sholat otomatis (sesuai lokasi), tracking puasa sunah, tadarus Al-Qur'an, catatan doa harian, dan pengingat dzikir.</div>
+                <h4>📊 Progress Ibadah Hari Ini</h4>
+                <table>
+                    <thead><tr><th>Ibadah</th><th>Target</th><th>Terpenuhi</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sholat Fardhu</td><td>5</td><td>5 ✅</td></tr>
+                        <tr><td>Puasa Sunnah</td><td>1</td><td>1 ✅</td></tr>
+                        <tr><td>Tadarus (menit)</td><td>15</td><td>12 ⚠️</td></tr>
+                        <tr><td>Dzikir Pagi/Petang</td><td>2</td><td>2 ✅</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fab fa-whatsapp"></i> <strong>Integrasi WA:</strong> Mendapatkan pengingat jadwal sholat dan motivasi harian via WhatsApp.</p>
+            `;
+            techs = ['HTML', 'JavaScript', 'WA API'];
+            screenshots = [];
+        }
+        // ----- Mas Ansor Mail -----
+        else if (projectId === 'masansor-mail') {
+            title = 'Mas Ansor Mail';
+            icon = 'envelope';
+            version = 'v2.0';
+            size = '2 MB';
+            fullDesc = `
+                <p>Platform pembuatan alamat email sementara secara cepat, aman, dan efisien untuk testing, registrasi aplikasi, automation, maupun proteksi privasi digital.</p>
+                <div class="highlight-box"><strong>📧 Keunggulan:</strong> Email disposable, inbox otomatis, masa aktif 10 menit - 24 jam, support attachment kecil, dan mode dark.</div>
+                <h4>📬 Aktivasi Terakhir</h4>
+                <table>
+                    <thead><tr><th>Email Sementara</th><th>Dibuat</th><th>Pesan Masuk</th></tr></thead>
+                    <tbody>
+                        <tr><td>user_abc@temp.ansor.studio</td><td>2 menit lalu</td><td>3</td></tr>
+                        <tr><td>test_xyz@temp.ansor.studio</td><td>15 menit lalu</td><td>1</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fas fa-trash-alt"></i> <strong>Privasi:</strong> Email otomatis terhapus setelah kadaluarsa, tidak ada log permanen.</p>
+            `;
+            techs = ['JavaScript', 'HTML', 'Node.js', 'Firebase'];
+            screenshots = [];
+        }
+        // ----- Scanner Pro -----
+        else if (projectId === 'scannerpro') {
+            title = 'Scanner Pro';
+            icon = 'search';
+            version = 'v2.7';
+            size = '1.2 MB';
+            fullDesc = `
+                <p>Alat canggih untuk mencari ratusan subdomain dan memindai IP aktif (Cloudflare / Non-CF) hanya dengan satu sentuhan jari.</p>
+                <div class="highlight-box"><strong>🔍 Fitur:</strong> Subdomain enumeration, port scanning dasar, deteksi web technology, dan export CSV.</div>
+                <h4>🔧 Contoh Hasil Scan</h4>
+                <table>
+                    <thead><tr><th>Target</th><th>Subdomain</th><th>IP</th><th>Cloudflare</th></tr></thead>
+                    <tbody>
+                        <tr><td>example.com</td><td>www</td><td>93.184.216.34</td><td>❌</td></tr>
+                        <tr><td>example.com</td><td>mail</td><td>192.0.2.10</td><td>✅</td></tr>
+                        <tr><td>example.com</td><td>api</td><td>198.51.100.22</td><td>❌</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fas fa-shield-alt"></i> <strong>Catatan:</strong> Gunakan hanya untuk pengujian dan eksplorasi yang sah.</p>
+            `;
+            techs = ['HTML5', 'Vanilla JavaScript', 'Fetch API', 'Express.js', 'net.Socket', 'Axios'];
+            screenshots = [];
+        }
+        // ----- Ayam SorrI -----
+        else if (projectId === 'ayamsorri') {
+            title = 'Ayam SorrI';
+            icon = 'drumstick-bite';
+            version = 'v2.7';
+            size = '1.2 MB';
+            fullDesc = `
+                <p>Game flappy bird versi ayam dengan kejutan seru. Bantu si Ayam Jago mengepakkan sayapnya melewati rintangan pipa-pipa retro yang menantang!</p>
+                <div class="highlight-box"><strong>🐔 Fitur Game:</strong> Mode klasik & mode malam, leaderboard global (via API), efek suara, dan skor tertinggi lokal.</div>
+                <h4>🏆 Peringkat Sementara</h4>
+                <table>
+                    <thead><tr><th>Nama</th><th>Skor</th></tr></thead>
+                    <tbody>
+                        <tr><td>Player1</td><td>85</td></tr>
+                        <tr><td>AyamJuara</td><td>72</td></tr>
+                        <tr><td>Kampung</td><td>64</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fas fa-mobile-alt"></i> <strong>Kontrol:</strong> Tap / spasi untuk mengepak. Semakin jauh semakin cepat!</p>
+            `;
+            techs = ['HTML5', 'Vanilla JavaScript'];
+            screenshots = [];
+        }
+        // ----- Layar Retak (Novel) -----
         else if (projectId === 'layarretak') {
             isNovel = true;
             title = 'Layar Retak: Kewarasan di Ujung Gang';
             icon = 'book-open';
             version = 'Edisi Pertama';
             size = 'PDF/EPUB';
-            fullDesc = `Sebuah novel yang mengisahkan empat pemuda di Gang Cempaka yang hampir hancur oleh judi online dan pinjol. Mereka selalu bilang "bukan urusan kita" sampai suatu hari teman mereka nyaris dihabisi debt collector. Dari situ mereka sadar: diam bukanlah solusi. Mereka memilih kembali ke jalan yang dulu ditinggalkan. Mereka memilih waras. 
-            <br><br>
-            <strong>Kutipan:</strong><br>
-            <em>“Apatis itu bukan keren. Apatis itu penyakit. Penyakit yang membuat kita jadi manusia yang tidak berguna bagi siapa pun, termasuk bagi diri kita sendiri.”</em><br>
-            <em>“Perlawanan kita adalah dengan kembali jadi manusia yang punya adab dan ingat Tuhan. Berhenti dikendalikan sama layar.”</em>`;
+            fullDesc = `
+                <p>Sebuah novel yang mengisahkan empat pemuda di Gang Cempaka yang hampir hancur oleh judi online dan pinjol. Mereka selalu bilang "bukan urusan kita" sampai suatu hari teman mereka nyaris dihabisi debt collector. Dari situ mereka sadar: diam bukanlah solusi. Mereka memilih kembali ke jalan yang dulu ditinggalkan. Mereka memilih waras.</p>
+                <div class="highlight-box">
+                    <strong>📖 Kutipan:</strong><br>
+                    <em>“Apatis itu bukan keren. Apatis itu penyakit. Penyakit yang membuat kita jadi manusia yang tidak berguna bagi siapa pun, termasuk bagi diri kita sendiri.”</em><br>
+                    <em>“Perlawanan kita adalah dengan kembali jadi manusia yang punya adab dan ingat Tuhan. Berhenti dikendalikan sama layar.”</em>
+                </div>
+                <h4>📚 Detail Novel</h4>
+                <table>
+                    <thead><tr><th>Aspek</th><th>Informasi</th></tr></thead>
+                    <tbody>
+                        <tr><td>Penulis</td><td>Mas Ansor</td></tr>
+                        <tr><td>Genre</td><td>Drama Sosial, Literasi Digital</td></tr>
+                        <tr><td>Halaman</td><td>248</td></tr>
+                        <tr><td>Bahasa</td><td>Indonesia</td></tr>
+                    </tbody>
+                </table>
+                <p><i class="fas fa-download"></i> Tersedia dalam format PDF, EPUB, dan bisa dibaca online.</p>
+            `;
             techs = ['Novel', 'Kepedulian Sosial', 'Kritis', 'Literasi Digital'];
             screenshots = [];
-        } 
+        }
+        // Default fallback (jika ada proyek lain yang tidak didefinisikan, misal Kasir Pintar, TokoUMKM)
         else {
-            // Data untuk aplikasi (sesuai kode asli)
-            if (projectId === 'markaz') { title = 'Markaz Laundry'; icon = 'soap'; version = '2.4.1'; size = '18 MB'; fullDesc = 'Aplikasi laundry all-in-one dengan notifikasi WhatsApp, laporan realtime, dan multi outlet.'; techs = ['Kotlin','Firebase','Retrofit','FCM']; screenshots = ["1.png","2.png","3.png"]; }
-            else if (projectId === 'desa') { title = 'Desa Kebonrejo'; icon = 'tree'; version = '3.0.2'; size = '22 MB'; fullDesc = 'Portal desa digital untuk pelayanan publik dan transparansi anggaran.'; techs = ['Flutter','Laravel','MySQL','REST API']; screenshots = ["1.png","2.png","3.png"]; }
-            else if (projectId === 'moeslem-daily-tracker') { title = 'Moeslem Daily Tracker'; icon = 'cube'; version = 'V2.0'; size = '2 MB'; fullDesc = 'Asisten digital untuk membantu umat Muslim mengelola ibadah harian dan membangun kebiasaan baik.'; techs = ["HTML","JAVASCRIPT","WA API"]; screenshots = ["1.jpg","2.jpg","3.jpg"]; }
-            else if (projectId === 'masansor-mail') { title = 'Mas Ansor Mail'; icon = 'cube'; version = 'v2.0'; size = '2 MB'; fullDesc = 'Platform pembuatan alamat email sementara untuk testing, registrasi, dan proteksi privasi digital.'; techs = ["JavaScript","Html","Node","Firebase"]; screenshots = ["aa.png","bb.png","cc.png"]; }
-            else if (projectId === 'scannerpro') { title = 'Scanner Pro'; icon = 'cube'; version = 'v2.7'; size = '1.2MB'; fullDesc = 'Alat canggih untuk mencari ratusan subdomain dan memindai IP aktif.'; techs = ["HTML5","Vanilla JavaScript","Fetch API","Express.js","net.Socket","Axios"]; screenshots = ["1a.png","2a.png","3a.png"]; }
-            else if (projectId === 'ayamsorri') { title = 'Ayam SorrI'; icon = 'cube'; version = 'v2.7'; size = '1.2MB'; fullDesc = 'Game flappy bird versi ayam dengan kejutan seru.'; techs = ["HTML5","Vanilla JavaScript"]; screenshots = ["1b.png","2b.png"]; }
-            else if (projectId === 'Smart HPP') { title = 'Smart HPP'; icon = 'cube'; version = 'v1.0'; size = '2MB'; fullDesc = 'Sistem Kasir & HPP Pintar (Smart POS) adalah aplikasi web untuk UMKM yang menggabungkan fitur manajemen kasir, stok, dan Kalkulator HPP untuk menghitung modal per porsi secara akurat.'; techs = ["React.js","HTML5","CSS3 Modern JavaScript"]; screenshots = ["hpp1.jpeg","hpp2.jpeg","hpp3.jpeg"]; }
-            else { return; }
+            // Untuk proyek yang mungkin tidak memiliki detail khusus, beri deskripsi default
+            title = projectId.replace(/-/g, ' ');
+            icon = 'cube';
+            version = '1.0';
+            size = 'N/A';
+            fullDesc = `<p>Detail lengkap untuk proyek ini akan segera diperbarui. Nikmati fitur-fitur canggih yang sedang dikembangkan.</p>`;
+            techs = [];
+            screenshots = [];
         }
 
         const techHTML = techs.map(t => `<span class="tech-tag">${t}</span>`).join("");
@@ -468,18 +902,17 @@
             <div class="screenshot-item" style="background:#141B2B; color:#A5F3FC; font-size:0.8rem; padding:10px; text-align:center;"><i class="fas fa-quote-left"></i><br>"Kita kerja keras hari ini bukan buat ngasih makan pejabat itu, tapi buat nebus harga diri Riki, dan nebus kewarasan kita sendiri."</div></div>`;
         }
 
-        // Tentukan tombol aksi modal
         let actionButtons = '';
         if (projectId === 'garudatel') {
             actionButtons = `<button class="download-btn" onclick="window.open('https://garudatel.my.id', '_blank')"><i class="fas fa-external-link-alt"></i> Kunjungi Website</button>
                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
         } else if (isNovel) {
-            actionButtons = `<button class="download-btn" onclick="window.open('/novel/layar-retak.pdf', '_blank')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
-                             <button class="download-btn" onclick="window.open('/novel/layar-retak.epub', '_blank')"><i class="fas fa-book"></i> Unduh EPUB</button>
-                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="window.open('/novel/layar-retak.html', '_blank')"><i class="fas fa-globe"></i> Baca Online</button>
+            actionButtons = `<button class="download-btn" onclick="alert('PDF akan segera tersedia')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
+                             <button class="download-btn" onclick="alert('EPUB akan segera tersedia')"><i class="fas fa-book"></i> Unduh EPUB</button>
+                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="alert('Baca online via browser')"><i class="fas fa-globe"></i> Baca Online</button>
                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
         } else {
-            actionButtons = `<button class="download-btn" onclick="simulateDownload('${title}')">Download APK</button>
+            actionButtons = `<button class="download-btn" onclick="simulateDownload('${title}')"><i class="fas fa-download"></i> Download APK</button>
                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
         }
 
@@ -492,7 +925,9 @@
                     <div class="modal-meta"><span>${version}</span><span>${size}</span></div>
                 </div>
             </div>
-            <p class="modal-desc">${fullDesc}</p>
+            <div class="modal-desc">
+                ${fullDesc}
+            </div>
             <h4 style="margin-bottom:10px;">${isNovel ? 'Tag' : 'Tech stack'}</h4>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">${techHTML}</div>
             ${screenshotHTML}
@@ -529,4 +964,4 @@
     }
 </script>
 </body>
-</html>
+</html>w
