@@ -838,15 +838,7 @@
             fullDesc = `
                 <p>Game flappy bird versi ayam dengan kejutan seru. Bantu si Ayam Jago mengepakkan sayapnya melewati rintangan pipa-pipa retro yang menantang!</p>
                 <div class="highlight-box"><strong>🐔 Fitur Game:</strong> Mode klasik & mode malam, leaderboard global (via API), efek suara, dan skor tertinggi lokal.</div>
-                <h4>🏆 Peringkat Sementara</h4>
-                <table>
-                    <thead><tr><th>Nama</th><th>Skor</th></tr></thead>
-                    <tbody>
-                        <tr><td>Player1</td><td>85</td></tr>
-                        <tr><td>AyamJuara</td><td>72</td></tr>
-                        <tr><td>Kampung</td><td>64</td></tr>
-                    </tbody>
-                </table>
+                w
                 <p><i class="fas fa-mobile-alt"></i> <strong>Kontrol:</strong> Tap / spasi untuk mengepak. Semakin jauh semakin cepat!</p>
             `;
             techs = ['HTML5', 'Vanilla JavaScript'];
@@ -909,7 +901,7 @@
         } else if (isNovel) {
             actionButtons = `<button class="download-btn" onclick="alert('PDF akan segera tersedia')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
                              <button class="download-btn" onclick="alert('EPUB akan segera tersedia')"><i class="fas fa-book"></i> Unduh EPUB</button>
-                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="alert('Baca online via browser')"><i class="fas fa-globe"></i> Baca Online</button>
+                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="window.open('/novel/layar-retak.html', '_blank')"><i class="fas fa-globe"></i> Baca Online</button>` 
                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
         } else {
             actionButtons = `<button class="download-btn" onclick="simulateDownload('${title}')"><i class="fas fa-download"></i> Download APK</button>
