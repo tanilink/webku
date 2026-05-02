@@ -244,6 +244,21 @@
         <!-- PROJECT GRID -->
         <div class="projects-grid">
 
+            <!-- PROYEK PPOB GARUDATEL (TAMBAHAN BARU) -->
+            <div class="project-card" data-category="web" data-recent="true" onclick="openProjectModal('garudatel')">
+                <div class="card-header">
+                    <div class="icon-wrapper"><i class="fas fa-credit-card"></i></div>
+                    <div class="badge-group"><span class="badge primary">PPOB</span><span class="badge">BUSINESS</span></div>
+                </div>
+                <h3 class="project-title">GarudaTel PPOB</h3>
+                <p class="project-desc">Platform Payment Point Online Bank (PPOB) untuk pembayaran tagihan, pulsa, paket data, listrik, BPJS, dan berbagai layanan digital lainnya. Cepat, aman, dan terintegrasi.</p>
+                <div class="tech-stack"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Midtrans</span><span class="tech-tag">Bootstrap 5</span></div>
+                <div class="card-footer">
+                    <span class="download-btn" onclick="event.stopPropagation(); window.open('https://garudatel.my.id', '_blank')"><i class="fas fa-external-link-alt"></i> Kunjungi</span>
+                    <span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
             <div class="project-card" data-category="web" data-recent="true" onclick="openProjectModal('Smart HPP')">
                 <div class="card-header">
                     <div class="icon-wrapper"><img src="images/icons/hpp.png" style="width:100%;height:100%;object-fit:contain;" onerror="this.outerHTML='<i class=\'fas fa-cube\'></i>'"></div>
@@ -399,7 +414,26 @@
     function openProjectModal(projectId) {
         let title, icon, version, size, fullDesc, techs = [], screenshots = [], isNovel = false;
 
-        if (projectId === 'layarretak') {
+        if (projectId === 'garudatel') {
+            title = 'GarudaTel PPOB';
+            icon = 'credit-card';
+            version = 'v1.0';
+            size = 'Web App';
+            fullDesc = `GarudaTel PPOB adalah platform <strong>Payment Point Online Bank (PPOB)</strong> yang memudahkan masyarakat dalam melakukan berbagai pembayaran tagihan secara online. Layanan yang tersedia meliputi:
+            <br><br>
+            <ul style="margin-left: 20px; margin-top: 8px;">
+                <li>💳 Pembayaran tagihan listrik, air, BPJS, dan telepon</li>
+                <li>📱 Isi ulang pulsa, paket data, dan token listrik</li>
+                <li>🎮 Voucher game & e-money</li>
+                <li>🏦 Transfer bank & tarik tunai (QRIS)</li>
+                <li>📊 Laporan transaksi dan manajemen deposit</li>
+            </ul>
+            <br>
+            Dirancang dengan antarmuka yang responsif, aman, dan terintegrasi dengan Midtrans serta berbagai provider PPOB terpercaya. Cocok untuk digunakan oleh agen pulsa, konter, maupun individu yang ingin bertransaksi praktis tanpa keluar rumah.`;
+            techs = ['Laravel 10', 'MySQL', 'Midtrans Payment Gateway', 'Bootstrap 5', 'jQuery', 'AJAX'];
+            screenshots = []; // opsional: bisa ditambahkan screenshoot jika ada
+        }
+        else if (projectId === 'layarretak') {
             isNovel = true;
             title = 'Layar Retak: Kewarasan di Ujung Gang';
             icon = 'book-open';
@@ -414,7 +448,7 @@
             screenshots = [];
         } 
         else {
-            // Data untuk aplikasi (sesuai kode asli, disederhanakan)
+            // Data untuk aplikasi (sesuai kode asli)
             if (projectId === 'markaz') { title = 'Markaz Laundry'; icon = 'soap'; version = '2.4.1'; size = '18 MB'; fullDesc = 'Aplikasi laundry all-in-one dengan notifikasi WhatsApp, laporan realtime, dan multi outlet.'; techs = ['Kotlin','Firebase','Retrofit','FCM']; screenshots = ["1.png","2.png","3.png"]; }
             else if (projectId === 'desa') { title = 'Desa Kebonrejo'; icon = 'tree'; version = '3.0.2'; size = '22 MB'; fullDesc = 'Portal desa digital untuk pelayanan publik dan transparansi anggaran.'; techs = ['Flutter','Laravel','MySQL','REST API']; screenshots = ["1.png","2.png","3.png"]; }
             else if (projectId === 'moeslem-daily-tracker') { title = 'Moeslem Daily Tracker'; icon = 'cube'; version = 'V2.0'; size = '2 MB'; fullDesc = 'Asisten digital untuk membantu umat Muslim mengelola ibadah harian dan membangun kebiasaan baik.'; techs = ["HTML","JAVASCRIPT","WA API"]; screenshots = ["1.jpg","2.jpg","3.jpg"]; }
@@ -434,6 +468,21 @@
             <div class="screenshot-item" style="background:#141B2B; color:#A5F3FC; font-size:0.8rem; padding:10px; text-align:center;"><i class="fas fa-quote-left"></i><br>"Kita kerja keras hari ini bukan buat ngasih makan pejabat itu, tapi buat nebus harga diri Riki, dan nebus kewarasan kita sendiri."</div></div>`;
         }
 
+        // Tentukan tombol aksi modal
+        let actionButtons = '';
+        if (projectId === 'garudatel') {
+            actionButtons = `<button class="download-btn" onclick="window.open('https://garudatel.my.id', '_blank')"><i class="fas fa-external-link-alt"></i> Kunjungi Website</button>
+                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
+        } else if (isNovel) {
+            actionButtons = `<button class="download-btn" onclick="window.open('/novel/layar-retak.pdf', '_blank')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
+                             <button class="download-btn" onclick="window.open('/novel/layar-retak.epub', '_blank')"><i class="fas fa-book"></i> Unduh EPUB</button>
+                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="window.open('/novel/layar-retak.html', '_blank')"><i class="fas fa-globe"></i> Baca Online</button>
+                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
+        } else {
+            actionButtons = `<button class="download-btn" onclick="simulateDownload('${title}')">Download APK</button>
+                             <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
+        }
+
         const contentHTML = `
             <span class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></span>
             <div class="modal-header">
@@ -448,11 +497,7 @@
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">${techHTML}</div>
             ${screenshotHTML}
             <div class="modal-actions">
-                ${isNovel ? `<button class="download-btn" onclick="window.open('/novel/layar-retak.pdf', '_blank')"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
-                              <button class="download-btn" onclick="window.open('/novel/layar-retak.epub', '_blank')"><i class="fas fa-book"></i> Unduh EPUB</button>
-                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="window.open('/novel/layar-retak.html', '_blank')"><i class="fas fa-globe"></i> Baca Online</button>` 
-                : `<button class="download-btn" onclick="simulateDownload('${title}')">Download APK</button>`}
-                <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>
+                ${actionButtons}
             </div>
         `;
 
