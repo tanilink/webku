@@ -346,6 +346,32 @@
             color: var(--text-muted);
         }
 
+        /* Feature list for bot */
+        .feature-list {
+            list-style: none;
+            margin: 10px 0;
+        }
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .feature-list li .num {
+            font-weight: 700;
+            color: var(--accent-primary);
+            min-width: 28px;
+            font-size: 1rem;
+        }
+        .feature-list li .content {
+            color: var(--text-body);
+            font-size: 0.9rem;
+        }
+        .feature-list li .content strong {
+            color: white;
+        }
+
         /* Footer */
         .cosmic-footer { margin-top: 80px; padding: 40px 0 30px; border-top: 1px solid rgba(34,211,238,0.1); display: grid; grid-template-columns: 1fr; gap: 40px; }
         @media (min-width: 640px) { .cosmic-footer { grid-template-columns: 1fr 1fr; } }
@@ -439,6 +465,21 @@
                 <div class="tech-stack"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Midtrans</span><span class="tech-tag">Bootstrap 5</span></div>
                 <div class="card-footer">
                     <span class="download-btn" onclick="event.stopPropagation(); window.open('https://garudatel.my.id', '_blank')"><i class="fas fa-external-link-alt"></i> Kunjungi</span>
+                    <span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- ========== BOT WHATSAPP PPOB (TAMBAHAN BARU) ========== -->
+            <div class="project-card" data-category="web" data-recent="true" onclick="openProjectModal('wabot-ppob')">
+                <div class="card-header">
+                    <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
+                    <div class="badge-group"><span class="badge primary">AUTOMATION</span><span class="badge">PPOB</span></div>
+                </div>
+                <h3 class="project-title">Bot WhatsApp PPOB</h3>
+                <p class="project-desc">Bot WhatsApp canggih untuk transaksi PPOB & produk digital otomatis. Dilengkapi admin panel one-reply, deposit QRIS terpusat, auto-refund akurat, dan fitur kasir terintegrasi.</p>
+                <div class="tech-stack"><span class="tech-tag">Node.js</span><span class="tech-tag">WhatsApp API</span><span class="tech-tag">Digiflazz</span><span class="tech-tag">QRIS</span><span class="tech-tag">MySQL</span></div>
+                <div class="card-footer">
+                    <span class="download-btn" onclick="event.stopPropagation(); window.open('https://wa.me/6287859000779?text=Halo%20Mas%20Ansor%2C%20saya%20tertarik%20dengan%20Bot%20WhatsApp%20PPOB', '_blank')"><i class="fab fa-whatsapp"></i> Demo Bot</span>
                     <span class="detail-link">Detail <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
@@ -546,7 +587,7 @@
             </div>
         </div>
 
-        <!-- SPOTLIGHT SECTION -->
+        <!-- SPOTLIGHT SECTION (dikosongkan) -->
         
 
         <!-- BOT SERVICES SECTION -->
@@ -573,7 +614,7 @@
                 <div class="bot-card">
                     <h3><i class="fab fa-whatsapp"></i> WhatsApp Bot <span class="ai-badge">Business API</span></h3>
                     <ul class="project-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>Bot Jual Beli Digital</strong> – Pembayaran & pengiriman otomatis</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bot PPOB & Digital</strong> – Transaksi otomatis 24/7, auto-refund</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Bot Pengaduan Kelurahan</strong> – Layanan online warga</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Bot Customer Service + AI</strong> – Balas otomatis, booking</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Bot Marketing & Broadcast</strong> – Promosi terjadwal</li>
@@ -642,8 +683,74 @@
     function openProjectModal(projectId) {
         let title, icon, version, size, fullDesc = '', techs = [], screenshots = [], isNovel = false;
 
-        // ----- SMART HPP (Detail lengkap sesuai gambar) -----
-        if (projectId === 'Smart HPP') {
+        // ----- BOT WHATSAPP PPOB (TAMBAHAN BARU) -----
+        if (projectId === 'wabot-ppob') {
+            title = 'Bot WhatsApp PPOB';
+            icon = 'whatsapp';
+            version = 'v2.0';
+            size = 'Full Automation';
+            fullDesc = `
+                <p style="font-size:1.05rem; margin-bottom:20px;"><strong>Fitur Unggulan Bot WhatsApp Ansor.studio</strong></p>
+                
+                <div class="highlight-box">
+                    <strong>🤖 Otomatisasi PPOB & Digital 24/7</strong>
+                </div>
+                
+                <ul class="feature-list">
+                    <li>
+                        <span class="num">1</span>
+                        <div class="content">
+                            <strong>Transaksi PPOB & Digital Otomatis (Autopilot 24/7)</strong><br>
+                            Terintegrasi langsung dengan gerbang pembayaran dan penyedia multi-provider terkemuka (seperti Digiflazz). Pelanggan cukup mengetik kode produk, dan sistem akan memotong saldo, menembakkan pesanan ke server, serta mengirimkan struk berserta Serial Number (SN) langsung ke WhatsApp pelanggan dalam hitungan detik.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">2</span>
+                        <div class="content">
+                            <strong>Panel Admin "One-Reply Action" untuk Produk Manual</strong><br>
+                            Tidak semua produk bersifat otomatis. Untuk produk digital premium (seperti akun streaming Vidio, Netflix, atau Source Code), bot dilengkapi Panel Admin Tersembunyi. Admin cukup me-reply notifikasi pesanan masuk dengan pesan data produk (untuk sukses) atau mengetik perintah pembatalan (seperti <code>batal</code> atau <code>refund</code>). Sistem akan otomatis meneruskan pesanan atau mengembalikan dana pelanggan tanpa perlu buka dashboard.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">3</span>
+                        <div class="content">
+                            <strong>Sistem Deposit QRIS & Dompet Digital Terpusat</strong><br>
+                            Pengguna dapat melakukan top-up saldo secara mandiri menggunakan kode QRIS dinamis yang bisa diunduh langsung dari website pendamping (seperti integrasi dengan Garudatel.my.id). Sistem menggunakan arsitektur "Dompet Utama" (Main Wallet), memastikan setiap mutasi saldo terpusat dengan aman, tanpa risiko tersangkut di ID perangkat sementara.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">4</span>
+                        <div class="content">
+                            <strong>Keamanan Tingkat Tinggi & Auto-Refund Akurat</strong><br>
+                            Dibekali dengan mesin Watcher & Radar yang tangguh. Jika terjadi gangguan pada server pusat atau nomor tujuan salah, bot secara cerdas akan mendeteksi kegagalan tersebut dan melakukan Auto-Refund (pengembalian dana) secara real-time ke dompet pelanggan. Bebas komplain, bebas repot!
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">5</span>
+                        <div class="content">
+                            <strong>Fitur Kasir (Point of Sale) Terintegrasi</strong><br>
+                            Sistem ini dapat diadaptasikan untuk kasir offline (warung, penatu/laundry, dsb). Dilengkapi dengan pencatatan alur stok barang, pengelolaan utang pelanggan, hingga dukungan cetak struk via Thermal Printer.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="num">6</span>
+                        <div class="content">
+                            <strong>Radar Pengintai & Keamanan Anti-Spam</strong><br>
+                            Bot dilengkapi pelindung dari akses nomor tak dikenal. Setiap ada upaya akses tidak sah, fitur Gatekeeper akan memblokir dan langsung mengirimkan laporan forwarding ke WhatsApp pribadi Owner, menjaga keamanan database tetap absolut.
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="highlight-box" style="border-left-color: #25D366;">
+                    <strong>📱 Demo & Konsultasi:</strong> Hubungi kami melalui WhatsApp untuk mencoba demo bot dan diskusi kebutuhan spesifik bisnis Anda.
+                </div>
+            `;
+            techs = ['Node.js', 'WhatsApp Business API', 'Digiflazz', 'QRIS', 'Payment Gateway', 'MySQL', 'Express.js'];
+            screenshots = [];
+        }
+
+        // ----- SMART HPP -----
+        else if (projectId === 'Smart HPP') {
             title = 'Smart HPP';
             icon = 'calculator';
             version = 'v1.0';
@@ -875,9 +982,8 @@
             techs = ['Novel', 'Kepedulian Sosial', 'Kritis', 'Literasi Digital'];
             screenshots = [];
         }
-        // Default fallback (jika ada proyek lain yang tidak didefinisikan, misal Kasir Pintar, TokoUMKM)
+        // Default fallback
         else {
-            // Untuk proyek yang mungkin tidak memiliki detail khusus, beri deskripsi default
             title = projectId.replace(/-/g, ' ');
             icon = 'cube';
             version = '1.0';
@@ -897,7 +1003,12 @@
         }
 
         let actionButtons = '';
-        if (projectId === 'garudatel') {
+        if (projectId === 'wabot-ppob') {
+            actionButtons = `
+                <button class="download-btn" onclick="window.open('https://wa.me/6287859000779?text=Halo%20Mas%20Ansor%2C%20saya%20tertarik%20dengan%20Bot%20WhatsApp%20PPOB%20dan%20ingin%20konsultasi', '_blank')"><i class="fab fa-whatsapp"></i> Konsultasi via WA</button>
+                <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>
+            `;
+        } else if (projectId === 'garudatel') {
             actionButtons = `<button class="download-btn" onclick="window.open('https://garudatel.my.id', '_blank')"><i class="fas fa-external-link-alt"></i> Kunjungi Website</button>
                              <button class="download-btn" style="background:rgba(255,255,255,0.05);" onclick="closeModal()">Tutup</button>`;
         } else if (isNovel) {
@@ -913,7 +1024,7 @@
         const contentHTML = `
             <span class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></span>
             <div class="modal-header">
-                <div class="modal-icon"><i class="fas fa-${icon}"></i></div>
+                <div class="modal-icon"><i class="fab fa-${icon}"></i></div>
                 <div class="modal-title-section">
                     <h2>${title}</h2>
                     <div class="modal-meta"><span>${version}</span><span>${size}</span></div>
